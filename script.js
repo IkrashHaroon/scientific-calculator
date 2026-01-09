@@ -1,6 +1,5 @@
 var input = document.getElementById("inputfield");
 
-/* 🔊 Sounds */
 var clickSound = new Audio("sounds/click.mp3");
 var errorSound = new Audio("sounds/error.mp3");
 
@@ -14,7 +13,6 @@ function playError() {
   errorSound.play();
 }
 
-/* Calculator logic */
 function getValue(buttonValue) {
   playClick();
   input.value += buttonValue;
@@ -53,7 +51,6 @@ function equal() {
   }
 }
 
-/* ⌨️ Keyboard typing sound */
 document.addEventListener("keydown", function(e) {
   if ("0123456789+-*/().".includes(e.key)) {
     playClick();
@@ -67,7 +64,6 @@ document.addEventListener("keydown", function(e) {
   }
 });
 
-/* 🎤 Voice Calculation */
 function startVoice() {
   playClick();
 
