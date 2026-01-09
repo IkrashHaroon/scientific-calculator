@@ -5,7 +5,7 @@ A modern **Scientific Calculator** built using **HTML, Tailwind CSS, and JavaScr
 ---
 
 ## 🚀 Live Demo
-👉 https://your-username.github.io/scientific-calculator/
+👉 https://ikrashharoon.github.io/scientific-calculator/
 
 ---
 
