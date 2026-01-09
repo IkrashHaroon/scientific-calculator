@@ -72,15 +72,30 @@ function startVoice() {
   rec.start();
 
   rec.onresult = function(e) {
-    input.value += e.results[0][0].transcript
-      .toLowerCase()
+    let transcript = e.results[0][0].transcript.toLowerCase();
+
+    const wordToNum = {
+      "zero": "0", "one": "1", "two": "2", "three": "3",
+      "four": "4", "five": "5", "six": "6", "seven": "7",
+      "eight": "8", "nine": "9", "ten": "10"
+    };
+
+    for (let word in wordToNum) {
+      transcript = transcript.replace(new RegExp(`\\b${word}\\b`, "g"), wordToNum[word]);
+    }
+
+    transcript = transcript
       .replace(/plus/g, "+")
       .replace(/minus/g, "-")
       .replace(/multiply|into/g, "*")
-      .replace(/divide by/g, "/");
+      .replace(/divide by/g, "/")
+      .replace(/\s+/g, ""); 
+
+    input.value += transcript;
   };
 
   rec.onerror = function () {
     playError();
   };
 }
+
