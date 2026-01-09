@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scientific Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[#0b0f14] px-3">
+
+  <!-- Calculator -->
+  <div
+    class="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px]
+    bg-[#111827] rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,.6)]
+    p-3 sm:p-4"
+  >
+
+    <!-- Display -->
+    <input
+      id="inputfield"
+      type="text"
+      placeholder="0"
+      class="w-full h-14 sm:h-16 mb-4 px-3 sm:px-4
+      text-right text-xl sm:text-2xl font-mono
+      bg-[#020617] text-emerald-400 rounded-xl outline-none
+      shadow-inner focus:ring-2 focus:ring-emerald-500 transition"
+    />
+
+    <!-- Buttons -->
+    <div class="grid grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm text-slate-200">
+
+      <button onclick="clearAll()" class="btn danger">C</button>
+      <button onclick="getValue('(')" class="btn">(</button>
+      <button onclick="getValue(')')" class="btn">)</button>
+      <button onclick="getValue('/')" class="btn op">÷</button>
+
+      <button onclick="getValue('sin(')" class="btn sci">sin</button>
+      <button onclick="getValue('cos(')" class="btn sci">cos</button>
+      <button onclick="getValue('tan(')" class="btn sci">tan</button>
+      <button onclick="getValue('*')" class="btn op">×</button>
+
+      <button onclick="getValue('log(')" class="btn sci">log</button>
+      <button onclick="getValue('√(')" class="btn sci">√</button>
+      <button onclick="getValue('**')" class="btn sci">xʸ</button>
+      <button onclick="getValue('-')" class="btn op">−</button>
+
+      <button onclick="getValue('7')" class="btn num">7</button>
+      <button onclick="getValue('8')" class="btn num">8</button>
+      <button onclick="getValue('9')" class="btn num">9</button>
+      <button onclick="getValue('+')" class="btn op">+</button>
+
+      <button onclick="getValue('4')" class="btn num">4</button>
+      <button onclick="getValue('5')" class="btn num">5</button>
+      <button onclick="getValue('6')" class="btn num">6</button>
+      <button onclick="equal()" class="btn equal row-span-2">=</button>
+
+      <button onclick="getValue('1')" class="btn num">1</button>
+      <button onclick="getValue('2')" class="btn num">2</button>
+      <button onclick="getValue('3')" class="btn num">3</button>
+
+      <button onclick="getValue('0')" class="btn num col-span-2">0</button>
+      <button onclick="getValue('.')" class="btn num">.</button>
+      <button onclick="startVoice()" class="btn voice">🎤</button>
+
+      <button onclick="delChar()" class="btn del col-span-4">DEL</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Responsive + Clean CSS -->
+  <style>
+    .btn{
+      padding:10px;
+      border-radius:10px;
+      background:#1f2937;
+      transition:all .15s ease;
+      box-shadow:inset 0 -2px 0 rgba(255,255,255,.04);
+    }
+
+    @media (min-width: 640px) {
+      .btn { padding:11px; }
+    }
+
+    .btn:hover{ background:#273449; }
+    .btn:active{ transform:scale(.96); }
+
+    .num{ background:#020617; }
+    .op{ background:#334155; color:#f8fafc; }
+    .sci{ background:#1e3a8a; color:#e0f2fe; }
+    .equal{ background:#059669; color:white; font-size:18px; }
+    .danger{ background:#7f1d1d; color:#fee2e2; }
+    .del{ background:#374151; }
+    .voice{ background:#312e81; }
+  </style>
+
+</body>
+</html>
