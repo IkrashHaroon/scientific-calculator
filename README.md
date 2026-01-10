@@ -57,7 +57,7 @@ scientific-calculator/
 
 **M. Ikrash Haroon**  
 Software Engineering Student  
-Web Developer
+Full Stack Developer
 
 ---
 
